@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Opacity</title>
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    }
+</style>
+<body>
+
+    <select id="imageSelect">
+        <option value="gambar1.jpg">Gambar 1</option>
+        <option value="gambar2.jpg">Gambar 2</option>
+        <option value="gambar3.jpg">Gambar 3</option>
+    </select>
+
+    <select id="opacitySelect">
+        <option value="1">1</option>
+        <option value="0.5">0.5</option>
+        <option value="0.2">0.2</option>
+    </select>
+
+    <input type="submit" value="Ubah" onclick="changeImageAndOpacity()">
+
+    <br><br>
+
+    <img id="imageDisplay" src="gambar1.jpg" alt="Selected Image" style="opacity: 1; width: 300px;">
+
+    <script>
+        function changeImageAndOpacity() {
+            var imageSelect = document.getElementById("imageSelect");
+            var opacitySelect = document.getElementById("opacitySelect");
+            var imageDisplay = document.getElementById("imageDisplay");
+
+            // Get selected values
+            var selectedImage = imageSelect.value;
+            var selectedOpacity = opacitySelect.value;
+
+            // Change image source and opacity
+            imageDisplay.src = selectedImage;
+            imageDisplay.style.opacity = selectedOpacity;
+        }
+    </script>
+
+</body>
+</html>
